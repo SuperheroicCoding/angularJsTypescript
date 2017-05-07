@@ -1,0 +1,11 @@
+{
+  "name": "angularJsTypescript",
+  "version": "1.0.0",
+  "main": "src/main.ts",
+  "author": "Wolfram Sokollek ",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/angular": "^1.6.17",
+    "angular": "^1.6.4"
+  }
+}
