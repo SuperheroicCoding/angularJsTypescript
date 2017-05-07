@@ -4,3 +4,18 @@
     font-size: large;
     color: blue;
 }
+
+body {
+    overflow: hidden;
+}
+
+.history {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+kt-chuck {
+    margin: 2px;
+    display: inline-flex;
+}
+

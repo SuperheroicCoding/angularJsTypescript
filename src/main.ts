@@ -1,5 +1,5 @@
 //main entry point
-import angular, {IModule, IQService} from '@types/angular';
+import angular, {IModule, IQService} from 'angular';
 
 import {appComponent} from './app.component';
 import {ktChuckComponent} from './kt-chuck.component';

@@ -1,7 +1,7 @@
-System.config({
+SystemJS.config({
     packages: {
-        "plugin-typescript": {
-            "main": "plugin.js"
+        "ts": {
+            "main": "lib/plugin.js"
         },
         "typescript": {
             "main": "lib/typescript.js",
@@ -12,11 +12,23 @@ System.config({
             }
         }
     },
+    paths: {
+        'npm:': './node_modules/'
+    },
+    map: {
+        "ts": "npm:plugin-typescript",
+        "typescript": "npm:typescript"
+    },
+    transpiler: 'ts'
+});
+
+System.config({
     //use typescript for compilation
-    transpiler: 'plugin-typescript',
+    transpiler: 'ts',
     //typescript compiler options
     typescriptOptions: {
-        emitDecoratorMetadata: true
+        emitDecoratorMetadata: true,
+        experimentalDecorators: true
     },
     paths: {
         'npm:': './node_modules/'
@@ -24,27 +36,14 @@ System.config({
 
     //map tells the System loader where to look for things
     map:{
-        "plugin-typescript": "npm:plugin-typescript/lib/",
-        'typescript': 'npm:typescript/lib/typescript.js',
         'app': './src',
         'angular': 'npm:angular/angular.min.js'
-    },
-    meta: {
-        'angular': {
-            format: 'global',
-            exports: 'angular'
-        }
     },
     //packages defines our app package
     packages: {
         app: {
             main: 'main.ts',
-            defaultExtension: 'ts',
-            "meta": {
-                "*.ts": {
-                    "loader": "typescript"
-                }
-            }
+            defaultExtension: 'ts'
         }
     }
 });

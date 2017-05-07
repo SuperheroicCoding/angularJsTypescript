@@ -4,16 +4,17 @@
 <head>
     <base href="."/>
     <title>Cara KT</title>
+    <!-- AngularJS Material CSS using GitCDN to load directly from `bower-material/master` -->
+    <link rel="stylesheet" href="https://gitcdn.link/repo/angular/bower-material/master/angular-material.css">
     <link rel="stylesheet" href="style.css"/>
     <script src="node_modules/systemjs/dist/system.js"></script>
     <script src="config.js"></script>
     <script>
-        System.import('app')
-            .catch(console.error.bind(console));
+        System.import('app').then(null, console.error.bind(console));
     </script>
 </head>
 
-<body>
+<body class="md-content md-margin md-padding">
 <my-app>
     loading...
 </my-app>
