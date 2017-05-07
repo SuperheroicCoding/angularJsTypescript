@@ -1,45 +1,32 @@
-import {IComponentOptions, IHttpService, IOnInit} from 'angular';
+import {IComponentOptions, IOnInit} from 'angular';
+import {ChuckService, Quote} from './chuckService.service';
 
-interface QuoteAPIResponse{
-    success: string;
-    value: Quote;
-}
-
-export interface Quote {
-    id: number;
-    joke: string;
-    category: Array<string>;
-}
 
 export const appComponent: IComponentOptions = {
     template: `
     <div>
-      <h2>Hello Cara KT!!! {{ $ctrl.date | date }}</h2>
-      <kt-chuck quote="$ctrl.quote.joke"></kt-chuck>
+      <h1>Hello Cara KT!!! {{ $ctrl.date | date }}</h1>
+      <kt-chuck quote="$ctrl.quote"></kt-chuck>
     </div>
   `,
-    controller: ['$http', class AppComponent implements IOnInit {
+    controller: class AppComponent implements IOnInit {
 
         private date: number;
-        private quote: Quote;
+        private quote: Quote = {joke: 'No quote fetched.', category: ['None'], id: -1};
 
-        private constructor(private $http: IHttpService) {
+        static $inject = ['ChuckService'];
+
+        private constructor(private chuckService: ChuckService) {
         }
 
-        $onInit() {
+        async $onInit() {
             this.date = Date.now();
             this.fetchQuote();
         }
 
         private fetchQuote(): void {
-            this.$http.get<QuoteAPIResponse>('https://api.icndb.com/jokes/random')
-                .then(response => response.data.value)
-                .then(quote => this.quote = quote);
+            this.chuckService.fetchQuote()
+                .then((quote) => this.quote = quote);
         }
-
-        /*private async fetchQuote(): void {
-            const response = await this.$http.get('https://api.icndb.com/jokes/random');
-            this.quote = response.data.value;
-        }*/
-    }]
+    }
 };

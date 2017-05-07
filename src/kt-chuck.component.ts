@@ -1,6 +1,6 @@
 import {IComponentOptions} from 'angular';
 
 export const ktChuckComponent : IComponentOptions = {
-    template: `<h2>{{$ctrl.quote}}</h2>`,
+    template: `<h3>{{$ctrl.quote.joke}}</h3>`,
     bindings: { quote: '<'}
 };
