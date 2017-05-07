@@ -30,5 +30,12 @@ export class ChuckService {
             });
     }
 
+    public async fetchQuoteAsync(): IPromise<Quote> {
+        const response: IHttpPromiseCallbackArg<QuoteAPIResponse> =
+            await this.$http.get('https://api.icndb.com/jokes/random');
+        const quote: Quote = response.data.value;
+        this.quotesFetched = this.quotesFetched.concat(quote);
+        return quote;
+    }
 
 }

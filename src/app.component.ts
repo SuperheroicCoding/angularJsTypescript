@@ -24,9 +24,8 @@ export const appComponent: IComponentOptions = {
             this.fetchQuote();
         }
 
-        private fetchQuote(): void {
-            this.chuckService.fetchQuote()
-                .then((quote) => this.quote = quote);
+        private async fetchQuote(): void {
+            this.quote = await this.chuckService.fetchQuoteAsync()
         }
     }
 };
