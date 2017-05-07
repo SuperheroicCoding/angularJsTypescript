@@ -6,6 +6,11 @@
   "license": "MIT",
   "devDependencies": {
     "@types/angular": "^1.6.17",
-    "angular": "^1.6.4"
+    "angular": "^1.6.4",
+    "http-server": "^0.10.0"
+  },
+  "scripts": {
+    "prestart": "yarn",
+    "start": "http-server ./ -a localhost -p 8000 -c-1"
   }
 }
