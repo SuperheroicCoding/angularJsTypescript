@@ -1,24 +1,50 @@
 System.config({
-  //use typescript for compilation
-  transpiler: 'typescript',
-  //typescript compiler options
-  typescriptOptions: {
-    emitDecoratorMetadata: true,
-  },
-  paths: {
-    'npm:': 'https://unpkg.com/'
-  },
-  //map tells the System loader where to look for things
-  map: {
-    'app': './src',
-    'angular': 'npm:angular/angular.min.js',
-    'typescript': 'npm:typescript@2.3.0/lib/typescript.js'
-  },
-  //packages defines our app package
-  packages: {
-    app: {
-      main: './main.ts',
-      defaultExtension: 'ts'
+    packages: {
+        "plugin-typescript": {
+            "main": "plugin.js"
+        },
+        "typescript": {
+            "main": "lib/typescript.js",
+            "meta": {
+                "lib/typescript.js": {
+                    "exports": "ts"
+                }
+            }
+        }
+    },
+    //use typescript for compilation
+    transpiler: 'plugin-typescript',
+    //typescript compiler options
+    typescriptOptions: {
+        emitDecoratorMetadata: true
+    },
+    paths: {
+        'npm:': './node_modules/'
+    },
+
+    //map tells the System loader where to look for things
+    map:{
+        "plugin-typescript": "npm:plugin-typescript/lib/",
+        'typescript': 'npm:typescript/lib/typescript.js',
+        'app': './src',
+        'angular': 'npm:angular/angular.min.js'
+    },
+    meta: {
+        'angular': {
+            format: 'global',
+            exports: 'angular'
+        }
+    },
+    //packages defines our app package
+    packages: {
+        app: {
+            main: 'main.ts',
+            defaultExtension: 'ts',
+            "meta": {
+                "*.ts": {
+                    "loader": "typescript"
+                }
+            }
+        }
     }
-  }
 });

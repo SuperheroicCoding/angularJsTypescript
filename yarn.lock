@@ -108,6 +108,10 @@ optimist@0.6.x:
     minimist "~0.0.1"
     wordwrap "~0.0.2"
 
+plugin-typescript@^7.0.6:
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/plugin-typescript/-/plugin-typescript-7.0.6.tgz#c764b5dd6532bc25525ec2f8f2d1b083b70bf0af"
+
 portfinder@^1.0.13:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
@@ -123,6 +127,28 @@ qs@~2.3.3:
 requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+span@~0.0.5:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/span/-/span-0.0.6.tgz#cbd224c4f9494243cd244ef2f41e4dfdbf0c21d6"
+
+systemjs@^0.20.12:
+  version "0.20.12"
+  resolved "https://registry.yarnpkg.com/systemjs/-/systemjs-0.20.12.tgz#135cc471280448453347829ebb9639a09a67f101"
+
+ts@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/ts/-/ts-0.0.0.tgz#6748589177dbbd7d80dede54b5da779d526346c0"
+  dependencies:
+    span "~0.0.5"
+
+tsc@^1.20150623.0:
+  version "1.20150623.0+f2044a901165a2a97813772353b57dd9ed4796ca"
+  resolved "https://registry.yarnpkg.com/tsc/-/tsc-1.20150623.0.tgz#4ebc3c774e169148cbc768a7342533f082c7a6e5"
+
+typescript@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.2.tgz#f0f045e196f69a72f06b25fd3bd39d01c3ce9984"
 
 union@~0.4.3:
   version "0.4.6"

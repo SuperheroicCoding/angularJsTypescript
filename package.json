@@ -7,7 +7,12 @@
   "devDependencies": {
     "@types/angular": "^1.6.17",
     "angular": "^1.6.4",
-    "http-server": "^0.10.0"
+    "http-server": "^0.10.0",
+    "plugin-typescript": "^7.0.6",
+    "systemjs": "^0.20.12",
+    "ts": "^0.0.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^2.3.2"
   },
   "scripts": {
     "prestart": "yarn",

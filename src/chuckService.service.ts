@@ -13,13 +13,15 @@ export interface Quote {
 
 export class ChuckService {
 
+
     // to make DI possible
     static $inject = ['$http'];
 
-    private quotesFetched: Array<Quote> = [];
+    public quotesFetched: Array<Quote> = [];
 
     constructor(private $http: IHttpService) {
     }
+
 
     public fetchQuote(): IPromise<Quote> {
         return this.$http.get<QuoteAPIResponse>('https://api.icndb.com/jokes/random')
